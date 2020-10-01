@@ -5,6 +5,7 @@ body {
  }
 
 h1 {
+    letter-spacing: -4px;
     color:brown;
     font-size: 72px; 
     margin-top: 0;
