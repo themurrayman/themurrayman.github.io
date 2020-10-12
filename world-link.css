@@ -1,12 +1,18 @@
+
+/* Browser resets */
+img { display: block; width: 100%; height: auto }  
+
 /* ==== PAGE WIDTH ==== */
 body {
-    background-color: lightcyan;
+    background-color: beige;
     padding-left: 20%;
     padding-right: 20%
  }
    
 
 h1 {
+    font-family: 'Domine', 'serif';
+    color: navy;
     font-size: 60px;
     text-align: center;
     font-weight: normal;
@@ -16,6 +22,8 @@ h1 {
 }
 
 h2 {
+    font-family: 'PT Sans', 'serif';
+    color: navy;
     text-align: center;
     font-weight: normal;
     letter-spacing: -2px;
@@ -24,6 +32,9 @@ h2 {
 }
 
 h3 {
+
+    font-family: 'PT Sans', 'serif';
+    color: navy;
     text-align: center;
     font-weight: normal;
     letter-spacing: -2px;
@@ -32,9 +43,18 @@ h3 {
 }
 
 p {
+    font-family: 'Domine', 'serif';
     font-size: 18px;
     text-align: center;
     font-family: sans-serif;
     line-height: 1.6;
     margin-top: 0;
+}
+
+
+/* Images */
+img{
+    margin-bottom: 32px;
+    /*Soften corners of images */
+    border-radius: 15px;
 }
