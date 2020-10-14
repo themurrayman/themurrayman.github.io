@@ -58,3 +58,15 @@ img{
     /*Soften corners of images */
     border-radius: 15px;
 }
+
+/* Div selector with properties and values */
+
+div { 
+    background-color: gold; 
+    padding: 10px; 
+    border-style: solid; 
+    border-color: rgb(11, 12, 3); 
+    border-width: 4px; 
+    margin: 32px 0 32px 0;
+ }
+ 
