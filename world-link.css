@@ -9,6 +9,9 @@ body {
     padding-right: 20%
  }
    
+ 
+
+ 
 
 h1 {
     font-family: 'Domine', 'serif';
@@ -59,8 +62,6 @@ img{
     border-radius: 15px;
 }
 
-/* Div selector with properties and values */
-
 div { 
     background-color: gold; 
     padding: 10px; 
@@ -69,4 +70,7 @@ div {
     border-width: 4px; 
     margin: 32px 0 32px 0;
  }
- 
+
+
+  /* Gradient direction: left to right */  
+  p{ background-image: linear-gradient(90deg, #f3e415, #746805) } 
