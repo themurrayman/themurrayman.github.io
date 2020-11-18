@@ -1,0 +1,93 @@
+/* ==== WEB BROWSER RESETS  ==== */
+* { box-sizing: border-box; padding: 0; margin: 0 }
+body, html { height: 100% }
+body { max-width: 1600px }
+img { width: 100%; height: auto; display: block }
+
+/* =============== FONT =============== */
+
+body { 	font-family: 'Neucha', sans-serif }
+
+
+/* =========== SECTION BLOCK CONTAINERS =========== */
+
+/* Desktops */
+@media all and (min-width:768px) { 
+	.container-block { padding: 4% 12% 4% 12%  }
+}
+
+/* Mobiles */
+@media all and (max-width:767px) { 
+	.container-block { padding: 12% 8% 12% 8%  }
+}
+
+/* Section block background colors */
+.bg-watermelon { background-color: #FBBDD9 }
+.bg-apple      { background-color: #B7F3D9 }
+.bg-blueberry  { background-color: #8C6BBE }
+.bg-lemon      { background-color: #F1F1BC }
+
+/* ============== INTRODUCTION TEXT ============ */
+
+h2 {
+	font-size: calc(26px + (54 - 26) * ((100vw - 320px) / (1600 - 320)));
+	color: #733fc0; 
+	text-align: center; 
+	line-height: 1.6;   
+}
+
+/* ==== FLEXBOX: PARENT AND CHILD ELEMENTS ==== */
+
+.container-flexbox { 
+	display: flex; 
+	justify-content: space-between; 
+	flex-wrap: wrap
+}
+
+/* Desktops: 2 columns */
+@media all and (min-width:768px) { 
+	.item-col-2 { width: 47% }
+}
+
+/* Mobiles: 1 column */
+@media all and (max-width:767px) { 
+	.item-col-2 { width: 100% }
+}
+
+/* ======= CONTENT INSIDE FLEXBOX CHILD COLUMNS ======= */
+
+/* Sub-headings  */
+h3 {
+	font-size: calc(32px + (64 - 32) * ((100vw - 320px) / (1600 - 320)));
+	color: #d1274b; 
+	letter-spacing: 2px; 
+	margin-bottom: 4px; 
+}
+
+/* Text paragraphs */
+p { 
+	font-size: calc(16px + (24 - 16) * ((100vw - 320px) / (1600 - 320)));
+	color: #2F4F4F; 
+	letter-spacing: 1px; 
+	line-height: 1.6; 
+}
+/* Sub-heading, paragraph text against dark background */
+.bg-blueberry h3 { color: #fff}
+
+/* Centre-align sub headings and paragraphs on mobiles */
+.bg-blueberry p { color: #fff}
+@media all and(max-width:767px) {
+	h3, p{ text-align: center}
+}
+
+/* Mobiles: Re-order columns inside first and third flexbox parent containers */ 
+@media all and (max-width: 767px) {
+	.bg-watermelon .item-col-2:nth-child(1) { order: 2; }
+	.bg-watermelon .item-col-2:nth-child(2) { order: 1; }
+	.bg-lemon      .item-col-2:nth-child(1) { order: 2; }
+	.bg-lemon      .item-col-2:nth-child(2) { order: 1; }
+  }
+
+
+
+
