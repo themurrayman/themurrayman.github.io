@@ -9,6 +9,7 @@
 
 	<meta name="description" content="A complete range of online and digital services to promote your brand and win customers.">
 
+	<link rel="stylesheet" href="assets/css/menus.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 	
 	<!-- Google Fonts -->
@@ -19,6 +20,71 @@
 </head>
 
 <body>
+
+	<!-- Begin desktop menu -->
+    <div class="container-menu-desktop menu-dark menu-sticky">
+        <!-- first child item -->
+        <a href="index.html"><img src="assets/img/web-agency-logo.png" alt="website logo"></a>  
+
+        <!-- second child item -->
+        <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html" class="btn-cta"><i class="fas fa-arrow-right"></i>Contact</a></li>  
+          </ul>
+    </div>
+    <!-- End desktop menu -->
+
+
+    <!-- Begin mobile menu bar -->
+    <div class="container-menu-bar-mobile menu-dark menu-sticky">
+            <!-- first child -->
+            <a href="index.html"><img src="assets/img/web-agency-logo.png" alt="website logo"></a>  
+
+            <!-- second child -->
+            <div class="item-icon">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </div>
+    <!-- End mobile menu bar -->
+
+    <!-- Begin mobile menu slide-out options -->
+    <div class="flyout-menu flyout-menu-is-closed menu-dark">
+        <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html" class="btn-cta"><i class="fas fa-arrow-right"></i>Contact</a></li>  
+          </ul>
+
+          <hr>
+          <h4>About Me</h4>
+          <div class="fly-out-profile-box">
+              
+              <p>Hi, I'm <b>Shane Murray</b>, a web and digital designer based in Dublin, Ireland.</p>
+          </div>
+     
+          <h4>Contact</h4>
+          <p>Have a project you'd like to discuss? Let's make something great together!</p>
+  
+          <h5><a href="tel:01-8552560">01-8552560</a></h5>
+  
+          <h5><a href="world.link@mail.com" target="_blank">world.link@mail.com</a></h5>
+  
+          <h4>Social Links</h4>
+          <div class="fly-out-social-icons">
+              <a href="https://github.com/themurrayman"><i class="fab fa-github-square fa-fw"></i></a>
+              
+              <a href="https://twitter.com/Worldlinklwg/" target="_blank"><i class="fab fa-twitter-square"></i></a>
+              <a href="https://www.instagram.com/worldlinkgardiner/" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.facebook.com/Worldlinkprint" target="_blank"><i class="fab fa-facebook-square"></i></a>
+          </div>
+          
+      </div>
+        
+    
+    <!-- End mobile menu slide-out options -->
 
 	<!-- Begin hero block -->
 	<header class="container-flexbox hero-block">
@@ -94,10 +160,133 @@
 	<section class="container-flexbox bg-pastel-pink">
 		<div class="item-col-1">
 			<h2>Collaboration today. Success tomorrow.</h2>
-			<p>Our talented and creative <a href="team.html" class="fancy-link">team</a> are ready to work alongside you. Let's chat.</p>
+			<p>Our talented and creative <a href="team.html" class="fancy-link">team</a> are ready to work alongside you. <a class="fancy-link" href="contact.html">Let's chat</a>.</p>
 		</div>
 	</section>
 	<!-- End parent flexbox container -->
+
+<!-- Begin JavaScript code for desktop and mobile menus -->
+<script>
+
+	// Code to detect click of option within fly-out menu
+	let specifiedElement = document.querySelector('.flyout-menu');
+	document.addEventListener('click', function(event) {
+		var isClickInside = specifiedElement.contains(event.target);
+		//If link is within current web page
+		if (isClickInside) {
+			//Get id of anchor
+			let anchor_id = window.location.hash;
+			//Add extra spacing above anchor
+			let elemAnchor = document.querySelector(anchor_id)
+			elemAnchor.classList.add('sticky-anchor');
+			//Close fly-out menu
+			toggleMobileMenu();
+		}
+		else {
+			return;
+		}
+	});
+
+	// Code to show/hide fly-out mobile menu -->
+	document.querySelector('.item-icon').addEventListener('click', toggleMobileMenu)
+	const pageContainer = document.querySelector('.page-container');
+
+	function toggleMobileMenu() {
+		//toggle hamburger icon
+		const elemIcon = document.querySelector('.item-icon');
+		elemIcon.classList.toggle("change");
+		const elemHTML = document.querySelector('html');
+		const elemBody = document.querySelector('body');            
+		const elemFlyOut = document.querySelector('.flyout-menu');
+
+		//if fly-out menu is currently closed, open it.
+		if (elemIcon.classList.contains('change')) {
+			elemFlyOut.classList.remove('flyout-menu-is-closed');
+			elemFlyOut.classList.add('flyout-menu-is-open');
+			elemHTML.classList.add('no-scroll');
+			elemBody.classList.add('no-scroll');
+		}    
+		//if fly-out menu is currently open, close it.
+		else {
+			elemFlyOut.classList.remove('flyout-menu-is-open');
+			elemFlyOut.classList.add('flyout-menu-is-closed');
+			elemHTML.classList.remove('no-scroll');
+			elemBody.classList.remove('no-scroll');                                
+		}
+	}
+
+	// Code for menus with transparent background
+	window.onscroll = function() {swapMenuStyle()};
+	const headerDesktop = document.querySelector('.container-menu-desktop');
+	const headerMobile = document.querySelector('.container-menu-bar-mobile');
+
+	const stickyDesktop = headerDesktop.offsetTop +300;
+	const stickyMobile = headerDesktop.offsetTop  +300;
+
+	function swapMenuStyle() {
+		if (window.pageYOffset > stickyDesktop) {
+			headerDesktop.classList.add("menu-light","menu-drop-shadow");
+			headerDesktop.classList.remove("menu-transparent");
+			headerMobile.classList.add("menu-light","menu-drop-shadow");
+			headerMobile.classList.remove("menu-transparent");
+
+		} else {
+			headerDesktop.classList.add("menu-dark");
+			headerDesktop.classList.remove("menu-light","menu-drop-shadow");
+			headerMobile.classList.add("menu-dark");
+			headerMobile.classList.remove("menu-light","menu-drop-shadow");
+		}
+	}
+
+</script>
+<!-- End JavaScript code for desktop and mobile menus -->
+
+<!-- Begin HTML footer -->
+    
+<footer class="container-footer">
+
+    <h4>Shane Murray, web designer</h4>
+    <h5>Excellence in digital creation</h5>
+
+    <ul class="footer-links">
+        <li><a href="https://themurrayman.github.io/index.html">Home</a></li>
+        <li><a href="https://themurrayman.github.io/portfolio/index.html">Portfolio</a></li>
+        <li><a href="https://themurrayman.github.io/contact/index.html">Contact</a></li>
+    </ul>
+    
+    <ul class="footer-icons">
+        
+
+        <li>
+            <a href="https://www.facebook.com/Worldlinkprint/" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a>
+        </li>
+
+        <li>
+            <a href="https://github.com/themurrayman/" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+        </li>
+
+        <li>
+            <a href="https://twitter.com/Worldlinklwg/" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.instagram.com/worldlinkgardiner/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </li>
+        
+     </ul>                
+    
+    <a class="privacy-legal" href="https://themurrayman.github.io/privacy.html">Privacy & Legal</a>
+</footer>
+
+<!-- End HTML footer -->
 
 </body>
 </html>
