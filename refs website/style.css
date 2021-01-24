@@ -50,7 +50,7 @@ h1 {
     display: flex; 
     justify-content: space-between; 
     flex-wrap: wrap; 
-    box-shadow: 2%;
+    
  }
 
 /* Desktops: flexbox child columns */
@@ -121,14 +121,15 @@ h1 {
 /* Outer footer parent container */
 .container-footer { 
     text-align: center;
-    color:#fff;
+    color:#f0c38e;
     background-color:#0e2439;
-    width: 100%;
+    font-family: 'Raleway', sans-serif;
 }
 
 /* Desktop footer - inside padding  */
 @media all and (min-width:768px) {
-	.container-footer { padding: 4% 8% 4% 8% }
+    .container-footer { padding: 4% 8% 4% 8% }
+    
 }
 
 /* Mobiles footer - inside padding */
