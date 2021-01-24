@@ -1,0 +1,226 @@
+/* B/*  ============= WEB BROWSER RESETS ============ */
+* { margin: 0; padding: 0; border: 0; box-sizing: border-box }
+html { height: 100% }
+body { min-height: 100%; max-width: 1600px; margin-left: auto; margin-right: auto }  
+img { width: 100%; height: auto; display: block }
+
+/* ========== MAIN CONTENT CONTAINERS ========= */
+/* Desktops */
+@media (min-width:768px) { .container-block { padding: 4% 8% } }
+
+/* Mobiles */
+@media (max-width:767px) { .container-block { padding: 11% 8% } }rowser resets */
+img { display: block; width: 100%; height: auto }  
+
+/* Web page */
+body { 
+    padding-top: 32px;
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-bottom: 32px;
+    background-color: #eaac7f 
+}
+
+
+
+/* Main heading */
+h1 {
+	font-family: 'Domine', serif;
+	font-weight: bold;
+	font-size: 24px;
+    letter-spacing: -1px;
+    text-align: center;
+    margin-top: 42px;
+    margin-bottom: 32px;
+    color: #0e2439;
+}
+
+/* ========== MAIN CONTENT CONTAINERS ========= */
+/* Desktops */
+@media (min-width:768px) { .container-block { padding: 2% 2% 2% 2% } }
+
+/* Mobiles */
+@media (max-width:767px) { .container-block { padding: 11% 8% } }
+
+
+/* ========== FLEXBOX PARENT AND CHILD COLUMN ELEMENTS ========= */
+
+/* Flexbox parent container */
+.container-flexbox {
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    box-shadow: 2%;
+ }
+
+/* Desktops: flexbox child columns */
+@media (min-width:768px) {
+    .item-col-4 { width: 22% }
+}
+
+/* Mobiles: flexbox child columns */
+@media (max-width: 767px) {
+    .item-col-4 { width: 100% }
+    /* Vertical spacing under child columns */
+    .item-col-4 { margin-bottom: 32px }
+    /* No vertical spacing under last child column */
+    .item-col-4:last-child  { margin-bottom: 0 } 
+}
+
+/* Desktops: inner padding for child columns */
+@media (min-width: 768px) {
+    .item-col-4.item-col-padding { padding: 1.8% 2% 2.2% 2% }
+}
+
+/* Mobiles: inner padding for child columns  */
+@media (max-width: 767px) {
+    .item-col-4.item-col-padding { padding: 6.5% 7% 7% 7% }
+}
+
+
+/* =========== SUB-HEADINGS AND PARAGRAPHS ============*/
+
+/* Desktops: inner padding for child columns */
+@media (min-width:768px) {
+    [class*="item-col-"].item-col-padding { padding: 1.8% 2% 2.2% 2% }
+ }
+ 
+ /* Mobiles: inner padding for child columns  */
+ @media (max-width:767px) {
+     [class*="item-col-"].item-col-padding { padding: 6.5% 7% 7% 7% }
+ }
+
+/* Desktops: paragraph line-spacing and bottom margin */
+@media (min-width: 768px) {
+    .item-col-4 p { line-height: 1.6; margin-bottom: 20px; font-family: serif; }
+}
+
+/* Mobiles: paragraph line-spacing and bottom margin */
+@media (max-width: 767px) {
+    .item-col-4 p { line-height: 1.4; margin-bottom: 14px }
+}
+
+/* No vertical spacing under final item inside child columns */
+.item-col-4 *:last-child { margin-bottom: 0 }
+
+/* Images inside child columns */
+.item-col-4 img { margin-bottom: 20px }
+
+
+/* ========= COLOURED BACKGROUNDS =========== */
+.bg-light { background-color: #f5f5f5 }
+.bg-dark  { background-color: #0e2439 }
+
+
+/* Colours for sub-headings and paragraphs */
+.container-flexbox.bg-dark .item-col-4 * { color: #fff }
+.container-flexbox .item-col-4.bg-dark * { color: #fff }
+
+/* == Begin footer CSS == */
+
+/* Outer footer parent container */
+.container-footer { 
+    text-align: center;
+    color:#fff;
+    background-color:#0e2439;
+    width: 100%;
+}
+
+/* Desktop footer - inside padding  */
+@media all and (min-width:768px) {
+	.container-footer { padding: 4% 8% 4% 8% }
+}
+
+/* Mobiles footer - inside padding */
+@media all and (max-width:767px) {
+	.container-footer { padding: 8% 8% 12% 8% }
+}
+
+/* Styles for footer background, text, icons and links */
+
+.container-footer h4,
+.container-footer h5,
+.container-footer ul li,
+.container-footer ul li a,
+.container-footer p,
+.container-footer p a {
+   color: #fff
+}
+
+/* Footer headings */
+.container-footer h4 {
+   font-family: serif;
+   font-weight: normal;
+   font-style: italic;
+   font-size: calc(26px + (48 - 26) * ((100vw - 320px)/(1600 - 320)));
+   margin: 0 auto 16px 0;
+}
+
+.container-footer h5 {
+    font-family: sans-serif;
+    font-weight: normal;
+    font-style:  italic;
+    color: #8d9093;
+    margin: 0 auto 36px auto;
+    font-size: calc(20px + (32 - 20) * ((100vw - 320px)/(1600 - 320)));
+}
+
+/* Footer text links and icon links */
+.container-footer ul.footer-links,
+.container-footer ul.footer-icons {
+    list-style-type: none;
+}
+
+.container-footer ul.footer-links {
+    margin: 0 auto 48px auto;
+}
+
+.container-footer ul.footer-icons {
+    margin: 0 auto 48px auto;
+}
+
+.container-footer ul.footer-links li,
+.container-footer ul.footer-icons li {
+    display: inline-block;
+    margin: 0 32px 0 0;
+}
+
+.container-footer ul.footer-links li:last-child,
+.container-footer ul.footer-icons li:last-child {
+    margin-right: 0;
+}
+
+/* Footer text links */
+.container-footer ul.footer-links li a {
+    text-decoration: none;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    padding-bottom:2px;    
+    font-size: calc(17px + (20 - 17) * ((100vw - 320px)/(1600 - 320)));
+}
+
+.container-footer ul.footer-links li a:link, 
+.container-footer ul.footer-links li a:visited  {
+   border-bottom-color: transparent;
+}
+
+.container-footer ul.footer-links li a:hover, 
+.container-footer ul.footer-links li a:active  {
+   border-bottom-color: #fff
+}
+
+/* Footer icons */
+.container-footer ul.footer-icons li a i {
+    text-decoration: none;
+    font-size: calc(22px + (28 - 22) * ((100vw - 320px)/(1600 - 320)));
+}
+
+.container-footer ul.footer-icons li a:hover, 
+.container-footer ul.footer-icons li a:active  {
+   color: #fff
+}
+
+
+
+/* == End footer CSS == */
+
